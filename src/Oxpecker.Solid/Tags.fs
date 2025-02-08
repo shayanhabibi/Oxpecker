@@ -23,6 +23,10 @@ module Tags =
         [<Extension; Erase>]
         static member attr(this: #HtmlTag, name: string, value: string) = this
 
+        /// Spreads an object identifier within an element. Care must be taken to spread a valid object.
+        [<Extension; Erase>]
+        static member spread(this: #HtmlTag, value: 'T) = this
+
         /// Add event handler to the element through the corresponding attribute
         [<Extension; Erase>]
         static member on(this: #HtmlTag, eventName: string, eventHandler: Event -> unit) = this
